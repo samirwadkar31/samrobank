@@ -1,0 +1,84 @@
+.home-bg{
+    height: 40vh ;
+    top: 56px;
+}
+#ham{
+    display: flex;
+    margin: 0px;
+    justify-self: flex-end;
+}
+.navbar{
+    flex-direction: column;
+    padding: 15px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.navList{
+    display: none;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 12px 0px 0px 0px;
+}
+.bank-name{
+    margin: 0px 10px;
+    justify-content: space-between;
+}
+.home-box h1,h2,h3{
+    text-align: center;
+}
+.home-box h1{
+    font-size: 45px;
+    
+}
+.home-box h2{
+    font-size: 35px;
+}
+.home-box h3{
+    width: 80%;
+    font-size: 25px;
+}
+.home-btn{
+    width: 90%;
+    margin-top: 50px;
+
+}
+.home-btn a{
+    font-size: 18px;
+}
+.table-box{
+    overflow: auto;
+    width: 90%;
+}
+.table{
+    overflow: auto;
+    width: 90%;
+    /* margin-left: 280px; */
+}
+.transfer-form{
+    width: 90%;
+}
+input{
+    font-size: 18px;
+    padding: 2px;
+}
+label{
+    font-size: 18px;
+}
+.form-btn a, input[type = submit]{
+    font-size: 18px;
+}
+td{
+    font-weight: 100;
+    padding: 5px;
+}
+.message-box{
+    width: 90%;
+}
+.message-box p{
+    font-size: 18px;
+}
+.msg-w{
+letter-spacing: 1;
+}
+.transaction-table h1{
+    font-size: 25px;
+}

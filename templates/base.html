@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static',filename = 'css/style.css') }} ">
+    <link rel="stylesheet" media="screen and (max-width:500px)" href="{{ url_for('static',filename = 'css/mobile.css') }}">
+    <script src="https://kit.fontawesome.com/fb5d9aac26.js" crossorigin="anonymous"></script>
+    <title>Samro Bank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+
+</head>
+<body class= bgd>
+   
+    <nav class="navbar">
+        <div class="bank-name">
+            <div class="bank-box"><i class="fas fa-university"></i>
+            <p>SAMRO BANK</p>
+        </div>
+            <div class="item" id="ham"><i class="fa fa-bars"></i></div>
+        </div>
+        <ul class="navList">
+            <li class="item"><a href="/" class="item-link">Home</a></li>
+            <li class="item"><a href="/customer_view" class="item-link">Customer View</a></li>
+            <li class="item"><a href="/transfer_money" class="item-link">Transfer Money</a></li>
+        </ul>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="message-box">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% block body %}
+        
+    {% endblock body %}
+
+    <script src="{{ url_for('static',filename = 'js/menu.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="message-box msg-w">
+    <p>Hi  {{customer.customer_name}}. Your  current  balance  is  Rs {{customer.current_bal}}
+    </p>
+</div>
+<div class="table-box transaction-table">
+    <h1>Your Transaction History</h1> 
+    {% if bank_statement|length == 0 %}
+        <div class="message-box">
+            <p>No Transactions Yet</p>
+        </div>
+    {% else %}
+        
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Transaction Id</th>
+                <th scope="col">Sender Name</th>
+                <th scope="col">Receiver Name</th>
+                <th scope="col">Amount Transfered</th>
+                <th scope="col">Transaction Date</th>
+                <th scope="col">Credit/Debit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for statement in bank_statement %}
+                <tr>
+                    <td><strong>{{ statement.trans_id }}</strong></td>
+                    <td>{{ statement.sender_name }}</td>
+                    <td>{{ statement.receiver_name }}</td>
+                    <td>{{ statement.amount_transfered }}</td>
+                    <td>{{ statement.date_transfer }}</td>
+                    {% if statement.sender_account_no == customer_account_no %}
+                    <td>Debit</td>
+                    {% else %}
+                    <td>Credit</td>
+                    {% endif %}
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+{% endblock body %}

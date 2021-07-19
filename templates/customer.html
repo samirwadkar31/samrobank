@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="table-box">
+    <h1>Customer Table</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Account No.</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Account Type</th>
+                <th scope="col">Current Balance</th>
+                <th scope="col">Mini Statement</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in all_customer %}
+                <tr>
+                    <td><strong>{{ loop.index }}</strong></td>
+                    <td>{{ customer.customer_name}}</td>
+                    <td>{{ customer.email}}</td>
+                    <td>{{ customer.account_type}}</td>
+                    <td>{{ customer.current_bal}}</td>
+                    <td>
+                        <a href="/bank_statement/{{customer.customer_account_no}}" type="button" class="btn">Bank Statement</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock body %}

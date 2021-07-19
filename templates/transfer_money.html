@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1 class="pg-title">Transfer Money</h1>
+    <form action="/transfer_money" class="transfer-form" method="POST">
+        <label for="sender_name">Sender Name</label>
+        <input type="text" id="sender_name" name="sender_name" required>
+        <label for="sender_account_no">Sender Account No.</label>
+        <input type="number" id="sender_account_no" name="sender_account_no" required>
+        <label for="receiver_name">Receiver Name</label>
+        <input type="text" id="receiver_name" name="receiver_name" required>
+        <label for="receiver_account_no">Receiver Account No.</label>
+        <input type="number" id="receiver_account_no" name="receiver_account_no" required>
+        <label for="amount">Amount</label>
+        <input type="text" id="amount" name="amount" required>
+        <div class="form-btn">
+            <a href="/customer_view" type="button">View Customers</button></a>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+{% endblock body %} 
